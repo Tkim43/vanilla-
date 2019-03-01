@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vanilla Javascript Todo-list</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/table.css">
+        <link rel="stylesheet" type="text/css" href="css/footer.css">
+        <link rel="stylesheet" type="text/css" href="css/navbar.css">
+        <script type="text/javascript" src="javascript/main.js"></script>
+    </head>
+    <body>
+    <nav>
+        <a href=#>Home</a>
+        <a href=#>List</a>
+        <a href=#>About</a>
+    </nav>
+    <header class="container">
+        <h1 class="title">Vanilla Javascript Todo-list with PHP</h1>
+        <p class="greeting">What would you like to do today?</p>
+    </header>
+    <form name="form" method="post" action="index.php" onsubmit="return validateForm()">
+        <div class="row center">
+            <input oninput="handleChange()" type="text" class="col-6" maxlength="55" name="todo-item">
+            <input type="submit" class="btn btn-large btn-success"></input>
+        </div>
+        <div id="validate" class="center validate"></div>
+    </form>
+    <div class="table-container">
+        <h2 class="greeting">Todo List</h2>
+        <table>
+            <tr>
+                <th>Incomplete Tasks</th>
+                <!-- <th>Completed Tasks</th> -->
+                <th>Operations</th>
+            </tr>
+            <tr>
+                <td>Wash Dog</td>
+                <!-- <td>Pet Dog</td> -->
+                <td><button class="btn btn-primary">Edit</button><button class="btn btn-danger">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Wash Cat</td>
+                <!-- <td>Pet Cat</td> -->
+                <td><button class="btn btn-primary">Edit</button><button class="btn btn-danger">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        <div class="footer">
+            <p class="copyright">Vanilla Javascript Todo-list @ Copyright 2019</p>
+        </div>
+    </footer>
+    </body>
+</html>
