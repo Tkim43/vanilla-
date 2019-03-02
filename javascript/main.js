@@ -57,10 +57,31 @@ function get_all_data(){
             console.log("tCol", tCol)
             tCol.textContent = obj_try.data[i].task;
             tRow.append(tCol);
+
+            var buttonCol = document.createElement('td');
+            tRow.append(buttonCol);
+            console.log("buttonCol",buttonCol);
+            var editButton = document.createElement('button');
+            editButton.textContent = "Edit";
+            editButton.classList.add("btn");
+            editButton.classList.add("btn-primary");
+            var deleteButton = document.createElement('button');
+            deleteButton.textContent = "Delete";
+            deleteButton.classList.add("btn");
+            deleteButton.classList.add("btn-danger");
+            
+            buttonCol.append(editButton);
+            buttonCol.append(deleteButton);
+
+
+            console.log("editbutton", editButton)
+            console.log("dbutton", deleteButton)
+
         }
 
         }
     };
-    xhttp.open("GET", "api/read.php", true);
+    xhttp.open("GET", "http://localhost:8888/vanilla-list/api/read.php", true);
+    xhttp.setRequestHeader("Accept", 'application/json');
     xhttp.send();
 }
