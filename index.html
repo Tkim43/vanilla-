@@ -19,9 +19,9 @@
         <h1 class="title">Vanilla Javascript Todo-list with PHP</h1>
         <p class="greeting">What would you like to do today?</p>
     </header>
-    <form name="form" method="post" action="index.php" onsubmit="return validateForm()">
+    <form name="form" onsubmit="return validateForm()">
         <div class="row center">
-            <input oninput="handleChange()" type="text" class="col-6" maxlength="55" name="todo-item">
+            <input action="api/crud/create.php" oninput="handleChange()" type="text" class="col-6" maxlength="55" name="todo-item">
             <input type="submit" class="btn btn-large btn-success"></input>
         </div>
         <div id="validate" class="center validate"></div>

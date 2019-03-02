@@ -1,4 +1,7 @@
 document.addEventListener('DOMcontentLoaded', function (){
+// call the function here to get the data
+
+
 });
 
 
@@ -10,6 +13,7 @@ function validateForm(){
         let validateText = document.getElementById("validate")
         validateText.textContent= "Please enter a task"
     }
+    add_single_task();
 }
 
 function handleChange(){
@@ -21,5 +25,15 @@ function handleChange(){
         let validateText = document.getElementById("validate")
         validateText.textContent= "Please enter a task"
     }
+
+}
+
+function add_single_task(){
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'api/direction.php');
+    xhr.send({
+        "success": "true"
+    })
 
 }
