@@ -28,6 +28,8 @@ if(!empty($result)){
 
 $myJSON = json_encode($output);
 
+header('Access-Control-Allow-Origin: *');
+
 echo $myJSON;
 
 // var_dump(json_decode($myJSON));
