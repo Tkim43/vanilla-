@@ -1,13 +1,13 @@
 <?php
 
-$LOCAL_ACCESS = true;
+// $LOCAL_ACCESS = true;
 
-$output = [
-    'success' => false,
-    'errors' => []
-];
+// $output = [
+//     'success' => false,
+//     'errors' => []
+// ];
 
-require_once('mysqlCredentials.php');
+// require_once('mysqlCredentials.php');
 
 // switch($_POST['action']){
 //     case 'create':
@@ -20,7 +20,7 @@ require_once('mysqlCredentials.php');
 //         $output['error'][] = 'Invalid Operation';
 // }
 
-$json_output = json_encode($output);
-print($json_output);
+// $json_output = json_encode($output);
+// print($json_output);
 
 ?>

@@ -1,9 +1,6 @@
-document.addEventListener('DOMcontentLoaded', function (){
-// call the function here to get the data
-
-
+document.addEventListener("DOMContentLoaded", function(){
+    get_all_data();
 });
-
 
 function validateForm(){
     console.log("validate was called")
@@ -13,7 +10,7 @@ function validateForm(){
         let validateText = document.getElementById("validate")
         validateText.textContent= "Please enter a task"
     }
-    add_single_task();
+    // add_single_task(form);
 }
 
 function handleChange(){
@@ -28,12 +25,42 @@ function handleChange(){
 
 }
 
-function add_single_task(){
+// function add_single_task(form){
+//     console.log("add task called", form)
+//     const xhr = new XMLHttpRequest();
+//     const url = 'api/crud/create.php'
+//     const keyValue = "todo-item=" +form;
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'api/direction.php');
-    xhr.send({
-        "success": "true"
-    })
+//     xhr.open('POST', url, true);
+//     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");   
+//     xhr.send({
+//         "success": "true"
+//     })
 
+// }
+
+function get_all_data(){
+    console.log("get all data called")
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        var obj_try = JSON.parse(this.responseText);
+        console.log("response", obj_try);
+        
+        var tBody = document.getElementById('table').getElementsByTagName('tbody')[0];
+        console.log("tbody", tBody);
+        console.log("obj length", obj_try.length)
+        for(var i =0; i < obj_try.data.length; i+=1){
+            var tRow = document.createElement('tr');
+            tBody.append(tRow);
+            var tCol = document.createElement('td');
+            console.log("tCol", tCol)
+            tCol.textContent = obj_try.data[i].task;
+            tRow.append(tCol);
+        }
+
+        }
+    };
+    xhttp.open("GET", "api/read.php", true);
+    xhttp.send();
 }

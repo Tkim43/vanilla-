@@ -19,16 +19,16 @@
         <h1 class="title">Vanilla Javascript Todo-list with PHP</h1>
         <p class="greeting">What would you like to do today?</p>
     </header>
-    <form name="form" onsubmit="return validateForm()">
-        <div class="row center">
-            <input action="api/crud/create.php" oninput="handleChange()" type="text" class="col-6" maxlength="55" name="todo-item">
-            <input type="submit" class="btn btn-large btn-success"></input>
+    <form name="form" action="process.php" method="POST" onsubmit="return validateForm()">
+        <div class="row center form-group">
+            <input placeholder="Enter a task you want to complete" oninput="handleChange()" type="text" class="col-6 text-muted rounded form-control" maxlength="55" name="todo-item">
+            <input type="submit" name="save" class="btn btn-large btn-success form-control col-1"></input>
         </div>
         <div id="validate" class="center validate"></div>
     </form>
     <div class="table-container">
         <h2 class="greeting">Todo List</h2>
-        <table>
+        <table id="table">
             <tr>
                 <th>Incomplete Tasks</th>
                 <!-- <th>Completed Tasks</th> -->
